@@ -1,1 +1,220 @@
+/* ---------- RESET ---------- */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:linear-gradient(
+    180deg,
+    #0d0d0d 0%,
+    #151515 100%);
+
+    color:white;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+#navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+#navbar.scrolled{
+
+    background:#0d0d0d;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+}
+
+.logo-small img{
+
+    width:58px;
+
+}
+
+nav{
+
+    display:flex;
+    gap:35px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:#D4AF37;
+
+}
+
+
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:0 20px;
+
+}
+
+.hero-logo{
+
+    width:170px;
+
+    margin-bottom:35px;
+
+}
+
+.hero h1{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:6rem;
+
+    letter-spacing:3px;
+
+}
+
+.hero h2{
+
+    font-size:2rem;
+
+    color:#D4AF37;
+
+    margin-top:10px;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    color:#cfcfcf;
+
+    margin-bottom:45px;
+
+}
+
+.hero-button{
+
+    text-decoration:none;
+
+    color:white;
+
+    border:2px solid #D4AF37;
+
+    padding:15px 36px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.hero-button:hover{
+
+    background:#D4AF37;
+
+    color:black;
+
+}
+
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+nav{
+
+    gap:18px;
+
+}
+
+nav a{
+
+    font-size:.9rem;
+
+}
+
+.hero-logo{
+
+    width:130px;
+
+}
+
+.hero h1{
+
+    font-size:3.6rem;
+
+}
+
+.hero h2{
+
+    font-size:1.6rem;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+}
+
+}
