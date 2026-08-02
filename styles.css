@@ -28,7 +28,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    /* Tuck closer to the edges */
+    /* Nice spacing while keeping logo tucked in */
     padding: 12px 30px;
 
     transition: .3s;
@@ -40,7 +40,7 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,.35);
 }
 
-/* Small logo in top-left */
+/* Top-left logo */
 .logo-small img {
     width: 58px;
     height: auto;
@@ -78,10 +78,10 @@ nav a:hover {
     padding: 40px 20px;
 }
 
-/* MUCH larger hero logo */
+/* Main hero logo */
 .hero-logo {
-    width: 650px;
-    max-width: 95%;
+    width: 560px;
+    max-width: 90%;
     height: auto;
     margin-bottom: 35px;
 }
@@ -107,18 +107,20 @@ nav a:hover {
 }
 
 .hero-button {
+    display: inline-block;
     text-decoration: none;
     color: white;
     border: 2px solid #D4AF37;
     padding: 15px 36px;
     border-radius: 50px;
-    transition: .3s;
+    transition: all .3s ease;
     font-weight: 600;
 }
 
 .hero-button:hover {
     background: #D4AF37;
     color: black;
+    transform: translateY(-2px);
 }
 
 /* ---------- MOBILE ---------- */
@@ -142,7 +144,7 @@ nav a:hover {
     }
 
     .hero-logo {
-        width: 340px;
+        width: 320px;
         max-width: 90%;
     }
 
@@ -156,5 +158,9 @@ nav a:hover {
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .hero-button {
+        padding: 13px 28px;
     }
 }
