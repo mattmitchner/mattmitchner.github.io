@@ -36,8 +36,10 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,.35);
 }
 
+/* Small logo in the navigation */
 .logo-small img {
-    width: 90px;
+    width: 58px;
+    height: auto;
 }
 
 nav {
@@ -68,21 +70,25 @@ nav a:hover {
     padding: 0 20px;
 }
 
+/* Main logo above THE MUNDO LEAGUE */
 .hero-logo {
-    width: 340px;
-    margin-bottom: 40px;
+    width: 450px;
+    max-width: 85%;
+    height: auto;
+    margin-bottom: 45px;
 }
 
 .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 6rem;
     letter-spacing: 3px;
+    line-height: 1;
 }
 
 .hero h2 {
     font-size: 2rem;
     color: #D4AF37;
-    margin-top: 10px;
+    margin-top: 12px;
     margin-bottom: 25px;
 }
 
@@ -112,7 +118,7 @@ nav a:hover {
 @media (max-width: 768px) {
 
     .logo-small img {
-        width: 70px;
+        width: 58px;
     }
 
     nav {
@@ -124,7 +130,8 @@ nav a:hover {
     }
 
     .hero-logo {
-        width: 220px;
+        width: 260px;
+        max-width: 80%;
     }
 
     .hero h1 {
