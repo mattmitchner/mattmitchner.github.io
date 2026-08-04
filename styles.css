@@ -1,395 +1,491 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 3.1
+   Version 4.0
 ========================================================== */
 
 /* ---------- RESET ---------- */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    width: 100%;
-    max-width: 100%;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
-body {
-    width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    font-family: 'Inter', sans-serif;
+body{
+
+    font-family:'Inter',sans-serif;
 
     background:
-        radial-gradient(
-            circle at top,
-            #2b2207 0%,
-            #111111 28%,
-            #0d0d0d 70%
-        );
+    radial-gradient(circle at top,#2b2207 0%,#111111 28%,#0d0d0d 70%);
 
-    color: white;
-    overflow-x: hidden;
+    color:#fff;
+
+    overflow-x:hidden;
+
 }
 
-img {
-    display: block;
-    max-width: 100%;
+img{
+
+    display:block;
+    max-width:100%;
+
 }
 
 /* ---------- NAVIGATION ---------- */
 
-#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+#navbar{
 
-    width: 100%;
-    max-width: 100%;
+    position:fixed;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    top:0;
+    left:0;
 
-    padding: 12px 30px;
+    width:100%;
 
-    transition: 0.35s;
-    z-index: 1000;
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 30px;
+
+    transition:.35s;
+
+    z-index:1000;
+
 }
 
-#navbar.scrolled {
-    background: rgba(13, 13, 13, 0.94);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+#navbar.scrolled{
 
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    background:rgba(13,13,13,.94);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.45);
+
 }
 
-.logo-small {
-    flex-shrink: 0;
+.logo-small img{
+
+    width:58px;
+
 }
 
-.logo-small img {
-    width: 58px;
-    height: auto;
+nav{
+
+    display:flex;
+
+    gap:34px;
+
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 34px;
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: 0.25s;
-}
+nav a:hover{
 
-nav a:hover {
-    color: #D4AF37;
+    color:#D4AF37;
+
 }
 
 /* ---------- HERO ---------- */
 
-.hero {
-    position: relative;
+.hero{
 
-    width: 100%;
-    max-width: 100%;
-    min-height: 100vh;
+    position:relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    min-height:100vh;
 
-    text-align: center;
-    padding: 70px 20px 40px;
+    display:flex;
 
-    overflow: hidden;
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+
 }
 
-.hero::before {
-    content: "";
+.hero::before{
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    content:"";
 
-    width: min(620px, 95vw);
-    height: min(620px, 95vw);
+    position:absolute;
 
-    transform: translate(-50%, -50%);
+    width:620px;
 
-    border-radius: 50%;
+    height:620px;
+
+    border-radius:50%;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(212, 175, 55, 0.18),
-            rgba(212, 175, 55, 0.03),
-            transparent 72%
-        );
 
-    filter: blur(20px);
-    pointer-events: none;
-    z-index: -1;
+    radial-gradient(circle,
+    rgba(212,175,55,.18),
+    rgba(212,175,55,.03),
+    transparent 72%);
+
+    filter:blur(20px);
+
+    z-index:-1;
+
 }
 
-.hero::after {
-    content: "";
+.hero::after{
 
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+    content:"";
 
-    width: 180px;
-    max-width: 70%;
-    height: 3px;
+    position:absolute;
 
-    transform: translateX(-50%);
+    bottom:0;
 
-    background: #D4AF37;
-    border-radius: 99px;
+    width:180px;
+
+    height:3px;
+
+    background:#D4AF37;
+
+    border-radius:99px;
+
 }
 
-.hero-logo {
-    width: 560px;
-    max-width: 90%;
-    height: auto;
+.hero-logo{
 
-    margin-bottom: 35px;
+    width:560px;
 
-    filter:
-        drop-shadow(0 0 18px rgba(212, 175, 55, 0.22));
+    max-width:90%;
 
-    animation: fadeUp 0.9s ease;
+    margin-bottom:35px;
+
+    filter:drop-shadow(0 0 18px rgba(212,175,55,.22));
+
 }
 
-.hero h1 {
-    max-width: 100%;
+.hero h1{
 
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 6rem;
-    letter-spacing: 4px;
-    line-height: 1;
+    font-family:'Bebas Neue',sans-serif;
 
-    overflow-wrap: break-word;
+    font-size:6rem;
+
+    letter-spacing:4px;
+
 }
 
-.hero h2 {
-    color: #D4AF37;
-    font-size: 2rem;
+.hero h2{
 
-    margin-top: 14px;
-    margin-bottom: 22px;
+    color:#D4AF37;
+
+    font-size:2rem;
+
+    margin:14px 0 22px;
+
 }
 
-.hero p {
-    max-width: 100%;
+.hero p{
 
-    color: #d4d4d4;
-    font-size: 1.15rem;
+    color:#d2d2d2;
 
-    overflow-wrap: break-word;
+    font-size:1.15rem;
+
 }
 
-/* ---------- LEAGUE OVERVIEW ---------- */
+/* ---------- SECTIONS ---------- */
 
-.league-overview {
-    width: 100%;
-    max-width: 900px;
+.league-overview,
+.franchises{
 
-    margin: 120px auto;
-    padding: 0 25px;
+    max-width:1100px;
 
-    text-align: center;
-    overflow: hidden;
+    margin:120px auto;
+
+    padding:0 25px;
+
+    text-align:center;
+
 }
 
-.section-label {
-    display: block;
+.section-label{
 
-    color: #D4AF37;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    font-weight: 700;
+    display:block;
 
-    margin-bottom: 15px;
+    color:#D4AF37;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    margin-bottom:14px;
+
 }
 
-.section-heading h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
-    letter-spacing: 2px;
+.section-heading h2{
 
-    margin-bottom: 25px;
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:3.5rem;
+
+    letter-spacing:2px;
+
+    margin-bottom:30px;
+
 }
 
-.overview-description {
-    max-width: 700px;
+.overview-description{
 
-    margin: 0 auto 70px;
+    max-width:720px;
 
-    line-height: 1.9;
-    color: #d2d2d2;
-    font-size: 1.05rem;
+    margin:0 auto 70px;
+
+    line-height:1.9;
+
+    color:#d2d2d2;
+
 }
 
 /* ---------- OVERVIEW CARDS ---------- */
 
-.overview-cards {
-    width: 100%;
+.overview-cards{
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display:flex;
 
-    gap: 28px;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:28px;
+
 }
 
-.overview-card {
-    width: 240px;
-    max-width: 100%;
+.overview-card{
 
-    background: #171717;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
+    width:240px;
 
-    padding: 28px 20px;
+    background:#171717;
 
-    transition: 0.3s;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    padding:28px;
+
 }
 
-.overview-card:hover {
-    transform: translateY(-4px);
-    border-color: #D4AF37;
+.overview-icon{
+
+    display:block;
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
 }
 
-.overview-icon {
-    display: block;
+/* ---------- CONFERENCES ---------- */
 
-    font-size: 2rem;
-    margin-bottom: 18px;
+.conference{
+
+    margin-top:90px;
+
 }
 
-.overview-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
+.conference:first-of-type{
+
+    margin-top:70px;
+
 }
 
-/* ---------- ANIMATIONS ---------- */
+.conference-heading{
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
+    margin-bottom:45px;
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+}
+
+.conference-heading h3{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:2.8rem;
+
+    color:#D4AF37;
+
+    letter-spacing:2px;
+
+}
+
+.conference-heading p{
+
+    color:#cfcfcf;
+
+    margin-top:8px;
+
+}
+
+/* ---------- GRID ---------- */
+
+.franchise-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,300px);
+
+    justify-content:center;
+
+    gap:28px;
+
+}
+
+/* Last card centered */
+
+.franchise-grid .franchise-card:last-child{
+
+    grid-column:1 / span 2;
+
+    justify-self:center;
+
+}
+
+/* ---------- CARD ---------- */
+
+.franchise-card{
+
+    background:#171717;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    padding:30px;
+
+    min-height:175px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    transition:.25s;
+
+}
+
+.franchise-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#D4AF37;
+
+}
+
+.franchise-card h4{
+
+    font-size:1.45rem;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+.franchise-card p{
+
+    color:#cfcfcf;
+
+}
+
+.commissioner-label{
+
+    margin-top:12px;
+
+    font-size:.82rem;
+
+    color:#9d9d9d;
+
 }
 
 /* ---------- MOBILE ---------- */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-    #navbar {
-        padding: 10px 14px;
+    #navbar{
+
+        padding:10px 14px;
+
     }
 
-    .logo-small img {
-        width: 50px;
+    nav{
+
+        gap:14px;
+
     }
 
-    nav {
-        gap: 13px;
+    nav a{
+
+        font-size:.85rem;
+
     }
 
-    nav a {
-        font-size: 0.82rem;
+    .hero-logo{
+
+        width:320px;
+
     }
 
-    .hero {
-        padding-left: 16px;
-        padding-right: 16px;
+    .hero h1{
+
+        font-size:3.5rem;
+
     }
 
-    .hero-logo {
-        width: 320px;
-        max-width: 88%;
+    .section-heading h2{
+
+        font-size:2.6rem;
+
     }
 
-    .hero h1 {
-        font-size: 3.4rem;
-        letter-spacing: 2px;
+    .franchise-grid{
+
+        grid-template-columns:1fr;
+
     }
 
-    .hero h2 {
-        font-size: 1.5rem;
+    .franchise-grid .franchise-card:last-child{
+
+        grid-column:auto;
+
     }
 
-    .hero p {
-        font-size: 1rem;
+    .franchise-card{
+
+        width:100%;
+
+        max-width:330px;
+
+        margin:0 auto;
+
     }
 
-    .league-overview {
-        margin: 90px auto;
-        padding: 0 18px;
-    }
-
-    .section-heading h2 {
-        font-size: 2.6rem;
-    }
-
-    .overview-description {
-        font-size: 1rem;
-        line-height: 1.75;
-        margin-bottom: 55px;
-    }
-
-    .overview-card {
-        width: 230px;
-        max-width: 90%;
-    }
-}
-
-/* ---------- SMALL PHONES ---------- */
-
-@media (max-width: 390px) {
-
-    #navbar {
-        padding: 9px 10px;
-    }
-
-    .logo-small img {
-        width: 46px;
-    }
-
-    nav {
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 0.76rem;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero-logo {
-        width: 290px;
-    }
 }
