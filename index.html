@@ -3,53 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>The Mundo League | Hall of Fame</title>
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <header id="navbar">
 
         <div class="logo-small">
-            <img src="assets/logos/the-mundo-league-logo.png" alt="The Mundo League Logo">
+            <img
+                src="assets/logos/the-mundo-league-logo.png"
+                alt="The Mundo League Logo"
+            >
         </div>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Champions</a>
-            <a href="#">History</a>
+            <a href="#home">Home</a>
+            <a href="#champions">Champions</a>
+            <a href="#history">History</a>
         </nav>
 
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <main>
 
-        <img
-            class="hero-logo"
-            src="assets/logos/the-mundo-league-logo.png"
-            alt="The Mundo League Logo">
+        <section class="hero" id="home">
 
-        <h1>THE MUNDO LEAGUE</h1>
+            <img
+                class="hero-logo"
+                src="assets/logos/the-mundo-league-logo.png"
+                alt="The Mundo League Logo"
+            >
 
-        <h2>Hall of Fame</h2>
+            <h1>THE MUNDO LEAGUE</h1>
 
-        <p>Celebrating Champions Since 2023</p>
+            <h2>Hall of Fame</h2>
 
-        <a href="#" class="hero-button">
-            View Champions
-        </a>
+            <p>Every Champion. Every Season. Forever.</p>
 
-    </section>
+        </section>
+
+        <section class="league-overview">
+
+            <div class="section-heading">
+
+                <span class="section-label">League Overview</span>
+
+                <h2>About The Mundo League</h2>
+
+                <p class="overview-description">
+                    Founded in 2023, The Mundo League is a competitive 10-team
+                    ESPN Fantasy Football redraft league built on tradition,
+                    rivalry, and the pursuit of a championship. The Hall of Fame
+                    preserves every champion, every season, and the legacy of
+                    The Mundo League for years to come.
+                </p>
+
+            </div>
+
+            <div class="overview-cards">
+
+                <article class="overview-card">
+                    <span class="overview-icon" aria-hidden="true">🏈</span>
+                    <h3>Redraft League</h3>
+                </article>
+
+                <article class="overview-card">
+                    <span class="overview-icon" aria-hidden="true">👥</span>
+                    <h3>10 Teams</h3>
+                </article>
+
+                <article class="overview-card">
+                    <span class="overview-icon" aria-hidden="true">📅</span>
+                    <h3>Established 2023</h3>
+                </article>
+
+                <article class="overview-card">
+                    <span class="overview-icon" aria-hidden="true">📱</span>
+                    <h3>ESPN Fantasy Football</h3>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 
