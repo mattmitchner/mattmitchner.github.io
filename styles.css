@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 5.3
+   Version 5.3 — Team Logos Update
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -363,18 +363,18 @@ nav a:hover {
     position: relative;
 
     width: 300px;
-    height: 175px;
+    height: 245px;
 
     background: #171717;
 
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
 
-    padding: 30px 24px;
+    padding: 24px 24px 30px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     text-align: center;
@@ -393,15 +393,30 @@ nav a:hover {
         0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
+/* Team logos */
+
+.franchise-logo {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 17px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
 .franchise-card h4 {
     font-size: 1.45rem;
     font-weight: 700;
+    line-height: 1.15;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .franchise-card p {
     color: #cfcfcf;
+    line-height: 1.2;
 }
 
 .commissioner-label {
@@ -409,7 +424,7 @@ nav a:hover {
 
     left: 0;
     right: 0;
-    bottom: 16px;
+    bottom: 14px;
 
     font-size: 0.78rem;
     color: #8f8f8f;
@@ -715,9 +730,14 @@ nav a:hover {
     .franchise-card {
         width: 100%;
         max-width: 330px;
-        height: 175px;
+        height: 245px;
 
         margin: 0 auto;
+    }
+
+    .franchise-logo {
+        width: 82px;
+        height: 82px;
     }
 
     .champion-card {
@@ -800,6 +820,12 @@ nav a:hover {
 
     .franchise-card {
         max-width: 300px;
+        height: 235px;
+    }
+
+    .franchise-logo {
+        width: 76px;
+        height: 76px;
     }
 
     .champion-card {
