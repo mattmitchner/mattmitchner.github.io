@@ -46,13 +46,14 @@
 
 </head>
 
-<body>
+<body class="seasons-page">
 
 <header id="navbar">
 
     <a
         class="logo-small"
-        href="/">
+        href="/"
+        aria-label="Return to The Mundo League homepage">
 
         <img
             src="/assets/logos/the-mundo-league-logo.png"
@@ -68,7 +69,8 @@
 
         <a
             class="active-nav-link"
-            href="/seasons/">
+            href="/seasons/"
+            aria-current="page">
 
             Seasons
 
@@ -80,9 +82,9 @@
 
 </header>
 
-<main class="champions-main">
+<main class="seasons-main">
 
-    <section class="champions-header">
+    <section class="seasons-header">
 
         <span class="section-label">
 
@@ -104,18 +106,20 @@
 
     </section>
 
-    <section class="champions-grid">
+    <section
+        class="seasons-grid"
+        aria-label="The Mundo League seasons">
 
-        <article class="past-champion-card">
+        <article class="season-card">
 
-            <div class="champion-year">
+            <div class="season-year">
 
                 2025 Season
 
             </div>
 
             <a
-                class="past-champion-button"
+                class="season-button"
                 href="/seasons/2025/">
 
                 View Season
@@ -124,16 +128,16 @@
 
         </article>
 
-        <article class="past-champion-card">
+        <article class="season-card">
 
-            <div class="champion-year">
+            <div class="season-year">
 
                 2024 Season
 
             </div>
 
             <a
-                class="past-champion-button"
+                class="season-button"
                 href="/seasons/2024/">
 
                 View Season
@@ -142,16 +146,16 @@
 
         </article>
 
-        <article class="past-champion-card">
+        <article class="season-card">
 
-            <div class="champion-year">
+            <div class="season-year">
 
                 2023 Season
 
             </div>
 
             <a
-                class="past-champion-button"
+                class="season-button"
                 href="/seasons/2023/">
 
                 View Season
@@ -184,7 +188,9 @@
 
         </div>
 
-        <nav class="footer-nav">
+        <nav
+            class="footer-nav"
+            aria-label="Footer navigation">
 
             <a href="/">Home</a>
 
