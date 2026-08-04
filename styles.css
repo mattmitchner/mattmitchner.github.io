@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 5.3 — Team Logos Update
+   Version 5.3 — Centered Franchise Cards
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -374,7 +374,7 @@ nav a:hover {
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 
     text-align: center;
@@ -392,8 +392,6 @@ nav a:hover {
     box-shadow:
         0 12px 28px rgba(0, 0, 0, 0.22);
 }
-
-/* Team logos */
 
 .franchise-logo {
     width: 82px;
@@ -419,7 +417,10 @@ nav a:hover {
     line-height: 1.2;
 }
 
-.commissioner-label {
+/* Labels remain at the bottom without shifting centered content */
+
+.commissioner-label,
+.defending-label {
     position: absolute;
 
     left: 0;
@@ -436,7 +437,13 @@ nav a:hover {
     padding-bottom: 30px;
 }
 
+.champion-section-heading h2 {
+    margin-bottom: 24px;
+}
+
 .champion-card {
+    position: relative;
+
     width: 100%;
     max-width: 520px;
 
@@ -459,9 +466,42 @@ nav a:hover {
         0 0 32px rgba(212, 175, 55, 0.06);
 
     text-align: center;
+    overflow: hidden;
+}
+
+/* Soft gold glow behind the champion logo */
+
+.champion-card::before {
+    content: "";
+
+    position: absolute;
+    top: 25px;
+    left: 50%;
+
+    width: 245px;
+    height: 245px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.2),
+            rgba(212, 175, 55, 0.06),
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    pointer-events: none;
 }
 
 .champion-logo {
+    position: relative;
+    z-index: 1;
+
     width: 190px;
     max-width: 70%;
     height: auto;
@@ -469,6 +509,18 @@ nav a:hover {
     margin: 0 auto 24px;
 
     object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 16px rgba(212, 175, 55, 0.2));
+}
+
+.champion-card h3,
+.champion-manager,
+.champion-record,
+.championship-score,
+.primary-button {
+    position: relative;
+    z-index: 1;
 }
 
 .champion-card h3 {
@@ -745,6 +797,11 @@ nav a:hover {
         padding: 32px 22px;
     }
 
+    .champion-card::before {
+        width: 215px;
+        height: 215px;
+    }
+
     .champion-logo {
         width: 160px;
     }
@@ -830,6 +887,11 @@ nav a:hover {
 
     .champion-card {
         padding: 28px 18px;
+    }
+
+    .champion-card::before {
+        width: 195px;
+        height: 195px;
     }
 
     .champion-logo {
