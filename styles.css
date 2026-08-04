@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 5.0
+   Version 5.1
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -210,7 +210,7 @@ nav a:hover {
     width: 100%;
     max-width: 1100px;
 
-    margin: 75px auto;
+    margin: 65px auto;
     padding: 0 25px;
 
     text-align: center;
@@ -241,7 +241,7 @@ nav a:hover {
 .overview-description {
     max-width: 720px;
 
-    margin: 0 auto 45px;
+    margin: 0 auto 42px;
 
     line-height: 1.85;
     color: #d2d2d2;
@@ -257,7 +257,7 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 .overview-card {
@@ -288,15 +288,15 @@ nav a:hover {
 /* ---------- CONFERENCES ---------- */
 
 .conference {
-    margin-top: 60px;
+    margin-top: 55px;
 }
 
 .conference:first-of-type {
-    margin-top: 45px;
+    margin-top: 42px;
 }
 
 .conference-heading {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .conference-heading h3 {
@@ -384,7 +384,7 @@ nav a:hover {
 /* ---------- DEFENDING CHAMPION ---------- */
 
 .defending-champion {
-    padding-bottom: 35px;
+    padding-bottom: 30px;
 }
 
 .champion-card {
@@ -509,6 +509,97 @@ nav a:hover {
     transform: translateX(3px);
 }
 
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+    width: 100%;
+
+    margin-top: 65px;
+    padding:
+        36px 30px
+        calc(24px + env(safe-area-inset-bottom));
+
+    background: #090909;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    text-align: left;
+}
+
+.footer-brand img {
+    width: 54px;
+    height: auto;
+}
+
+.footer-brand h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    color: #D4AF37;
+    font-size: 0.9rem;
+
+    margin-top: 2px;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.footer-nav a {
+    color: #bdbdbd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: 0.25s;
+}
+
+.footer-nav a:hover {
+    color: #D4AF37;
+}
+
+.footer-copyright {
+    max-width: 1100px;
+
+    margin: 28px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #777777;
+    font-size: 0.82rem;
+    text-align: center;
+}
+
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
@@ -555,7 +646,7 @@ nav a:hover {
     .league-overview,
     .franchises,
     .defending-champion {
-        margin: 55px auto;
+        margin: 50px auto;
         padding: 0 18px;
     }
 
@@ -590,6 +681,29 @@ nav a:hover {
 
     .champion-card h3 {
         font-size: 2.6rem;
+    }
+
+    .site-footer {
+        margin-top: 50px;
+        padding:
+            30px 18px
+            calc(22px + env(safe-area-inset-bottom));
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 24px;
+    }
+
+    .footer-brand {
+        text-align: left;
+    }
+
+    .footer-nav {
+        justify-content: center;
+        gap: 16px;
     }
 }
 
@@ -631,5 +745,13 @@ nav a:hover {
 
     .champion-logo {
         width: 145px;
+    }
+
+    .footer-nav {
+        gap: 12px;
+    }
+
+    .footer-nav a {
+        font-size: 0.82rem;
     }
 }
