@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Homepage + Past Champions Page
+   Homepage + Champions + Seasons
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -608,7 +608,7 @@ nav a:hover {
 }
 
 /* ==========================================================
-   PAST CHAMPIONS PAGE
+   CHAMPIONS PAGE
 ========================================================== */
 
 .champions-main {
@@ -646,11 +646,6 @@ nav a:hover {
 
     gap: 28px;
 }
-
-/*
-Centers an unpaired final champion while keeping it
-exactly the same 360px width as the cards above.
-*/
 
 .champions-grid
 .past-champion-card:last-child:nth-child(odd) {
@@ -765,6 +760,142 @@ exactly the same 360px width as the cards above.
 }
 
 .past-champion-button:hover {
+    background: #D4AF37;
+    color: #111111;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+/* ==========================================================
+   SEASONS PAGE
+========================================================== */
+
+.seasons-main {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+    padding: 145px 25px 55px;
+}
+
+.seasons-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.seasons-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+.seasons-header p {
+    color: #cfcfcf;
+    font-size: 1.05rem;
+}
+
+.seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 360px));
+
+    justify-content: center;
+
+    gap: 28px;
+}
+
+.seasons-grid
+.season-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    width: 100%;
+    max-width: 360px;
+}
+
+.season-card {
+    width: 100%;
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 26px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(29, 29, 29, 0.98),
+            rgba(20, 20, 20, 0.98)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(212, 175, 55, 0.65);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+.season-year {
+    width: 100%;
+
+    padding: 13px 5px;
+    margin-bottom: 30px;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.45);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+
+    color: #D4AF37;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1.8px;
+}
+
+.season-button {
+    display: inline-block;
+
+    padding: 11px 27px;
+
+    border: 2px solid #D4AF37;
+    border-radius: 999px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.season-button:hover {
     background: #D4AF37;
     color: #111111;
 
@@ -973,7 +1104,7 @@ exactly the same 360px width as the cards above.
         font-size: 2.6rem;
     }
 
-    /* Past Champions page */
+    /* Champions page */
 
     .champions-main {
         padding: 125px 18px 35px;
@@ -1011,6 +1142,41 @@ exactly the same 360px width as the cards above.
     .past-champion-logo {
         width: 105px;
         height: 105px;
+    }
+
+    /* Seasons page */
+
+    .seasons-main {
+        padding: 125px 18px 35px;
+    }
+
+    .seasons-header {
+        margin-bottom: 36px;
+    }
+
+    .seasons-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .seasons-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .seasons-grid
+    .season-card:last-child:nth-child(odd) {
+        grid-column: auto;
+
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .season-card {
+        width: 100%;
+        max-width: 390px;
+        min-height: 215px;
+
+        margin: 0 auto;
     }
 
     .site-footer {
@@ -1101,7 +1267,7 @@ exactly the same 360px width as the cards above.
         width: 145px;
     }
 
-    /* Past Champions page */
+    /* Champions page */
 
     .champions-main {
         padding: 115px 14px 30px;
@@ -1136,6 +1302,35 @@ exactly the same 360px width as the cards above.
 
     .past-champion-card h2 {
         font-size: 2.1rem;
+    }
+
+    /* Seasons page */
+
+    .seasons-main {
+        padding: 115px 14px 30px;
+    }
+
+    .seasons-header h1 {
+        font-size: 3rem;
+    }
+
+    .seasons-header p {
+        font-size: 0.95rem;
+    }
+
+    .season-card,
+    .seasons-grid
+    .season-card:last-child:nth-child(odd) {
+        width: 100%;
+        max-width: 330px;
+        min-height: 205px;
+
+        padding: 25px 20px;
+    }
+
+    .season-year {
+        font-size: 1.75rem;
+        margin-bottom: 27px;
     }
 
     .footer-nav {
