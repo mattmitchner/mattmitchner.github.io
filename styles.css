@@ -621,7 +621,6 @@ nav a:hover {
 
 .champions-header {
     text-align: center;
-
     margin-bottom: 48px;
 }
 
@@ -639,8 +638,6 @@ nav a:hover {
     font-size: 1.05rem;
 }
 
-/* Two columns, filled left to right */
-
 .champions-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 360px));
@@ -651,15 +648,17 @@ nav a:hover {
 }
 
 /*
-If the final row contains only one champion,
-center that final card across both columns.
-When there are four champions, this rule no longer applies.
+Centers an unpaired final champion while keeping it
+exactly the same 360px width as the cards above.
 */
 
 .champions-grid
 .past-champion-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
+
+    width: 100%;
+    max-width: 360px;
 }
 
 .past-champion-card {
@@ -707,7 +706,6 @@ When there are four champions, this rule no longer applies.
     width: 100%;
 
     padding: 10px 5px;
-
     margin-bottom: 24px;
 
     border-top: 1px solid rgba(212, 175, 55, 0.45);
@@ -857,7 +855,6 @@ When there are four champions, this rule no longer applies.
     max-width: 1100px;
 
     margin: 28px auto 0;
-
     padding-top: 20px;
 
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -992,13 +989,15 @@ When there are four champions, this rule no longer applies.
 
     .champions-grid {
         grid-template-columns: 1fr;
-
         gap: 22px;
     }
 
     .champions-grid
     .past-champion-card:last-child:nth-child(odd) {
         grid-column: auto;
+
+        width: 100%;
+        max-width: 390px;
     }
 
     .past-champion-card {
@@ -1116,7 +1115,10 @@ When there are four champions, this rule no longer applies.
         font-size: 0.95rem;
     }
 
-    .past-champion-card {
+    .past-champion-card,
+    .champions-grid
+    .past-champion-card:last-child:nth-child(odd) {
+        width: 100%;
         max-width: 330px;
         min-height: 350px;
 
