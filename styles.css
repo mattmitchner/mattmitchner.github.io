@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 4.1
+   Version 5.0
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -22,6 +22,8 @@ html {
 body {
     width: 100%;
     max-width: 100%;
+    min-height: 100%;
+
     font-family: 'Inter', sans-serif;
 
     background:
@@ -49,6 +51,7 @@ img {
     left: 0;
 
     width: 100%;
+    max-width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -69,6 +72,10 @@ img {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
 }
 
+.logo-small {
+    flex-shrink: 0;
+}
+
 .logo-small img {
     width: 58px;
     height: auto;
@@ -76,6 +83,7 @@ img {
 
 nav {
     display: flex;
+    align-items: center;
     gap: 34px;
 }
 
@@ -83,6 +91,7 @@ nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
+    white-space: nowrap;
 
     transition: 0.25s;
 }
@@ -97,6 +106,7 @@ nav a:hover {
     position: relative;
 
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
 
     display: flex;
@@ -133,7 +143,6 @@ nav a:hover {
         );
 
     filter: blur(20px);
-
     pointer-events: none;
     z-index: -1;
 }
@@ -196,11 +205,12 @@ nav a:hover {
 /* ---------- MAIN SECTIONS ---------- */
 
 .league-overview,
-.franchises {
+.franchises,
+.defending-champion {
     width: 100%;
     max-width: 1100px;
 
-    margin: 120px auto;
+    margin: 75px auto;
     padding: 0 25px;
 
     text-align: center;
@@ -217,7 +227,7 @@ nav a:hover {
     font-size: 0.9rem;
     font-weight: 700;
 
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .section-heading h2 {
@@ -225,15 +235,15 @@ nav a:hover {
     font-size: 3.5rem;
     letter-spacing: 2px;
 
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .overview-description {
     max-width: 720px;
 
-    margin: 0 auto 70px;
+    margin: 0 auto 45px;
 
-    line-height: 1.9;
+    line-height: 1.85;
     color: #d2d2d2;
     font-size: 1.05rem;
 }
@@ -247,7 +257,7 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
 
-    gap: 28px;
+    gap: 20px;
 }
 
 .overview-card {
@@ -259,7 +269,7 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
 
-    padding: 28px 20px;
+    padding: 24px 20px;
 }
 
 .overview-icon {
@@ -267,7 +277,7 @@ nav a:hover {
 
     font-size: 2rem;
 
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .overview-card h3 {
@@ -278,15 +288,15 @@ nav a:hover {
 /* ---------- CONFERENCES ---------- */
 
 .conference {
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 .conference:first-of-type {
-    margin-top: 70px;
+    margin-top: 45px;
 }
 
 .conference-heading {
-    margin-bottom: 45px;
+    margin-bottom: 30px;
 }
 
 .conference-heading h3 {
@@ -300,7 +310,7 @@ nav a:hover {
 .conference-heading p {
     color: #cfcfcf;
 
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
 /* ---------- FRANCHISE GRID ---------- */
@@ -311,10 +321,8 @@ nav a:hover {
 
     justify-content: center;
 
-    gap: 28px;
+    gap: 24px;
 }
-
-/* Center the fifth card while keeping it full-sized */
 
 .franchise-grid .franchise-card:last-child {
     grid-column: 1 / span 2;
@@ -362,11 +370,6 @@ nav a:hover {
     color: #cfcfcf;
 }
 
-/*
-The Commissioner label is positioned independently.
-This prevents the team and manager names from moving upward.
-*/
-
 .commissioner-label {
     position: absolute;
 
@@ -376,6 +379,134 @@ This prevents the team and manager names from moving upward.
 
     font-size: 0.78rem;
     color: #8f8f8f;
+}
+
+/* ---------- DEFENDING CHAMPION ---------- */
+
+.defending-champion {
+    padding-bottom: 35px;
+}
+
+.champion-card {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(33, 33, 33, 0.98),
+            rgba(20, 20, 20, 0.98)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 18px;
+
+    padding: 38px 28px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.35),
+        0 0 32px rgba(212, 175, 55, 0.06);
+
+    text-align: center;
+}
+
+.champion-logo {
+    width: 190px;
+    max-width: 70%;
+    height: auto;
+
+    margin: 0 auto 24px;
+
+    object-fit: contain;
+}
+
+.champion-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.champion-manager {
+    color: #d1d1d1;
+    font-size: 1.05rem;
+
+    margin-bottom: 18px;
+}
+
+.champion-record {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.05rem;
+
+    margin-bottom: 24px;
+}
+
+.championship-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 28px;
+}
+
+.championship-score span {
+    color: #9f9f9f;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.championship-score strong {
+    color: #D4AF37;
+    font-size: 1.65rem;
+}
+
+.primary-button {
+    display: inline-block;
+
+    padding: 14px 34px;
+
+    border: 2px solid #D4AF37;
+    border-radius: 999px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.primary-button:hover {
+    background: #D4AF37;
+    color: #111111;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 24px rgba(212, 175, 55, 0.3);
+}
+
+.all-champions-link {
+    display: inline-block;
+
+    margin-top: 24px;
+
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.all-champions-link:hover {
+    color: #f0d77e;
+    transform: translateX(3px);
 }
 
 /* ---------- MOBILE ---------- */
@@ -398,6 +529,11 @@ This prevents the team and manager names from moving upward.
         font-size: 0.85rem;
     }
 
+    .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .hero-logo {
         width: 320px;
         max-width: 88%;
@@ -417,8 +553,9 @@ This prevents the team and manager names from moving upward.
     }
 
     .league-overview,
-    .franchises {
-        margin: 90px auto;
+    .franchises,
+    .defending-champion {
+        margin: 55px auto;
         padding: 0 18px;
     }
 
@@ -440,6 +577,19 @@ This prevents the team and manager names from moving upward.
         height: 175px;
 
         margin: 0 auto;
+    }
+
+    .champion-card {
+        max-width: 420px;
+        padding: 32px 22px;
+    }
+
+    .champion-logo {
+        width: 160px;
+    }
+
+    .champion-card h3 {
+        font-size: 2.6rem;
     }
 }
 
@@ -473,5 +623,13 @@ This prevents the team and manager names from moving upward.
 
     .franchise-card {
         max-width: 300px;
+    }
+
+    .champion-card {
+        padding: 28px 18px;
+    }
+
+    .champion-logo {
+        width: 145px;
     }
 }
