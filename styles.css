@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 5.3 — Centered Franchise Cards
+   Homepage + Past Champions Page
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -97,6 +97,10 @@ nav a {
 }
 
 nav a:hover {
+    color: #D4AF37;
+}
+
+.active-nav-link {
     color: #D4AF37;
 }
 
@@ -324,7 +328,6 @@ nav a:hover {
     height: auto;
 
     flex-shrink: 0;
-
     object-fit: contain;
 }
 
@@ -400,7 +403,6 @@ nav a:hover {
     margin: 0 auto 17px;
 
     object-fit: contain;
-
     flex-shrink: 0;
 }
 
@@ -416,8 +418,6 @@ nav a:hover {
     color: #cfcfcf;
     line-height: 1.2;
 }
-
-/* Labels remain at the bottom without shifting centered content */
 
 .commissioner-label,
 .defending-label {
@@ -469,8 +469,6 @@ nav a:hover {
     overflow: hidden;
 }
 
-/* Soft gold glow behind the champion logo */
-
 .champion-card::before {
     content: "";
 
@@ -494,7 +492,6 @@ nav a:hover {
         );
 
     filter: blur(18px);
-
     pointer-events: none;
 }
 
@@ -608,6 +605,175 @@ nav a:hover {
 .all-champions-link:hover {
     color: #f0d77e;
     transform: translateX(3px);
+}
+
+/* ==========================================================
+   PAST CHAMPIONS PAGE
+========================================================== */
+
+.champions-main {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+    padding: 145px 25px 55px;
+}
+
+.champions-header {
+    text-align: center;
+
+    margin-bottom: 48px;
+}
+
+.champions-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+.champions-header p {
+    color: #cfcfcf;
+    font-size: 1.05rem;
+}
+
+/* Two columns, filled left to right */
+
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 360px));
+
+    justify-content: center;
+
+    gap: 28px;
+}
+
+/*
+If the final row contains only one champion,
+center that final card across both columns.
+When there are four champions, this rule no longer applies.
+*/
+
+.champions-grid
+.past-champion-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.past-champion-card {
+    width: 100%;
+    min-height: 390px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 26px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(29, 29, 29, 0.98),
+            rgba(20, 20, 20, 0.98)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.past-champion-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(212, 175, 55, 0.65);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.34);
+}
+
+.champion-year {
+    width: 100%;
+
+    padding: 10px 5px;
+
+    margin-bottom: 24px;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.45);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+
+    color: #D4AF37;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.65rem;
+    letter-spacing: 1.5px;
+}
+
+.past-champion-logo {
+    width: 115px;
+    height: 115px;
+
+    margin: 0 auto 20px;
+
+    object-fit: contain;
+}
+
+.past-champion-card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.35rem;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+.past-champion-card p {
+    color: #cfcfcf;
+    font-size: 1rem;
+
+    margin-bottom: 24px;
+}
+
+.past-champion-button {
+    display: inline-block;
+
+    margin-top: auto;
+
+    padding: 11px 25px;
+
+    border: 2px solid #D4AF37;
+    border-radius: 999px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.past-champion-button:hover {
+    background: #D4AF37;
+    color: #111111;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(212, 175, 55, 0.25);
 }
 
 /* ---------- FOOTER ---------- */
@@ -810,6 +976,44 @@ nav a:hover {
         font-size: 2.6rem;
     }
 
+    /* Past Champions page */
+
+    .champions-main {
+        padding: 125px 18px 35px;
+    }
+
+    .champions-header {
+        margin-bottom: 36px;
+    }
+
+    .champions-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .champions-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .champions-grid
+    .past-champion-card:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+
+    .past-champion-card {
+        width: 100%;
+        max-width: 390px;
+        min-height: 365px;
+
+        margin: 0 auto;
+    }
+
+    .past-champion-logo {
+        width: 105px;
+        height: 105px;
+    }
+
     .site-footer {
         margin-top: 50px;
         padding:
@@ -896,6 +1100,40 @@ nav a:hover {
 
     .champion-logo {
         width: 145px;
+    }
+
+    /* Past Champions page */
+
+    .champions-main {
+        padding: 115px 14px 30px;
+    }
+
+    .champions-header h1 {
+        font-size: 3rem;
+    }
+
+    .champions-header p {
+        font-size: 0.95rem;
+    }
+
+    .past-champion-card {
+        max-width: 330px;
+        min-height: 350px;
+
+        padding: 27px 20px;
+    }
+
+    .champion-year {
+        font-size: 1.5rem;
+    }
+
+    .past-champion-logo {
+        width: 95px;
+        height: 95px;
+    }
+
+    .past-champion-card h2 {
+        font-size: 2.1rem;
     }
 
     .footer-nav {
