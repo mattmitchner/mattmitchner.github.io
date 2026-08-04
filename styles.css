@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 5.3
+   Version 5.4
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -313,14 +313,14 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 
-    gap: 26px;
+    gap: 24px;
 
     margin-bottom: 30px;
 }
 
 .conference-logo {
-    width: 150px;
-    max-width: 38vw;
+    width: 180px;
+    max-width: 42vw;
     height: auto;
 
     flex-shrink: 0;
@@ -329,12 +329,12 @@ nav a:hover {
 }
 
 .conference-heading h3 {
-    max-width: 420px;
+    max-width: 360px;
 
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.55rem;
-    letter-spacing: 2px;
-    line-height: 1.08;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
 
     color: #D4AF37;
 
@@ -689,18 +689,18 @@ nav a:hover {
     }
 
     .conference-heading {
-        gap: 18px;
+        gap: 16px;
     }
 
     .conference-logo {
-        width: 120px;
-        max-width: 34vw;
+        width: 140px;
+        max-width: 38vw;
     }
 
     .conference-heading h3 {
-        max-width: 250px;
+        max-width: 220px;
 
-        font-size: 2rem;
+        font-size: 1.55rem;
         line-height: 1.08;
     }
 
@@ -786,16 +786,16 @@ nav a:hover {
     }
 
     .conference-heading {
-        gap: 14px;
+        gap: 12px;
     }
 
     .conference-logo {
-        width: 105px;
+        width: 125px;
     }
 
     .conference-heading h3 {
-        max-width: 205px;
-        font-size: 1.72rem;
+        max-width: 185px;
+        font-size: 1.35rem;
     }
 
     .franchise-card {
