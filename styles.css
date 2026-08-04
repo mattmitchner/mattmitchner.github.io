@@ -1,7 +1,7 @@
 /* ==========================================================
    THE MUNDO LEAGUE
    Hall of Fame
-   Version 5.4
+   Version 5.5
 ========================================================== */
 
 /* ---------- RESET ---------- */
@@ -164,6 +164,8 @@ nav a:hover {
     border-radius: 99px;
 }
 
+/* Original hero logo sizing preserved */
+
 .hero-logo {
     width: 560px;
     max-width: 90%;
@@ -313,14 +315,16 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 
-    gap: 24px;
+    gap: 22px;
 
     margin-bottom: 30px;
 }
 
+/* Larger conference logos */
+
 .conference-logo {
-    width: 180px;
-    max-width: 42vw;
+    width: 220px;
+    max-width: 44vw;
     height: auto;
 
     flex-shrink: 0;
@@ -328,13 +332,15 @@ nav a:hover {
     object-fit: contain;
 }
 
+/* Smaller written-out conference titles */
+
 .conference-heading h3 {
-    max-width: 360px;
+    max-width: 320px;
 
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 1.5px;
-    line-height: 1.1;
+    font-size: 1.65rem;
+    letter-spacing: 1px;
+    line-height: 1.08;
 
     color: #D4AF37;
 
@@ -659,6 +665,8 @@ nav a:hover {
         padding-right: 16px;
     }
 
+    /* Original mobile hero-logo size preserved */
+
     .hero-logo {
         width: 320px;
         max-width: 88%;
@@ -689,19 +697,23 @@ nav a:hover {
     }
 
     .conference-heading {
-        gap: 16px;
+        gap: 15px;
     }
+
+    /* Larger mobile conference logos */
 
     .conference-logo {
-        width: 140px;
-        max-width: 38vw;
+        width: 165px;
+        max-width: 43vw;
     }
 
-    .conference-heading h3 {
-        max-width: 220px;
+    /* Smaller mobile conference titles */
 
-        font-size: 1.55rem;
-        line-height: 1.08;
+    .conference-heading h3 {
+        max-width: 190px;
+
+        font-size: 1.25rem;
+        line-height: 1.06;
     }
 
     .franchise-grid {
@@ -777,6 +789,8 @@ nav a:hover {
         font-size: 0.76rem;
     }
 
+    /* Original small-phone hero-logo size preserved */
+
     .hero-logo {
         width: 290px;
     }
@@ -786,16 +800,18 @@ nav a:hover {
     }
 
     .conference-heading {
-        gap: 12px;
+        gap: 10px;
     }
 
     .conference-logo {
-        width: 125px;
+        width: 145px;
+        max-width: 42vw;
     }
 
     .conference-heading h3 {
-        max-width: 185px;
-        font-size: 1.35rem;
+        max-width: 165px;
+        font-size: 1.05rem;
+        line-height: 1.05;
     }
 
     .franchise-card {
