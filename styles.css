@@ -2280,13 +2280,139 @@ nav a:hover {
 }
 
 /* ==========================================================
-   BRACKET CONNECTING LINES
+   PLAYOFF BRACKET — CENTERING + CONNECTORS ONLY
 ========================================================== */
 
+.playoff-bracket {
+    min-width: 980px;
+    min-height: 620px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 48px;
+
+    padding: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(24, 24, 24, 0.97),
+            rgba(15, 15, 15, 0.99)
+        );
+}
+
+/* ---------- ROUND POSITIONING ---------- */
+
+.bracket-round {
+    position: relative;
+
+    height: 560px;
+
+    display: grid;
+    grid-template-rows:
+        62px
+        repeat(8, minmax(0, 1fr));
+
+    overflow: visible;
+}
+
+.bracket-round-heading {
+    grid-row: 1;
+
+    align-self: start;
+
+    text-align: center;
+}
+
+.bracket-round-heading h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+
+    color: #D4AF37;
+}
+
+.bracket-round-heading p {
+    margin-top: 4px;
+
+    color: #8f8f8f;
+    font-size: 0.78rem;
+}
+
 /*
-Every Round 1 matchup sends a short horizontal line
-toward the joining vertical line.
+Round 1 keeps all four existing cards:
+1. team vranic bye
+2. Njokus vs Win
+3. money mitch bye
+4. Team Kertesz bye
 */
+
+.bracket-round-one .bracket-matchup:nth-child(2) {
+    grid-row: 2;
+}
+
+.bracket-round-one .bracket-matchup:nth-child(3) {
+    grid-row: 4;
+}
+
+.bracket-round-one .bracket-matchup:nth-child(4) {
+    grid-row: 6;
+}
+
+.bracket-round-one .bracket-matchup:nth-child(5) {
+    grid-row: 8;
+}
+
+/* Two semifinal cards centered between the Round 1 pairings */
+
+.bracket-round-two .bracket-matchup:nth-child(2) {
+    grid-row: 3;
+}
+
+.bracket-round-two .bracket-matchup:nth-child(3) {
+    grid-row: 7;
+}
+
+/* Championship centered vertically */
+
+.bracket-championship .bracket-matchup:nth-child(2) {
+    grid-row: 5;
+}
+
+/* ---------- MATCHUPS ---------- */
+
+.bracket-matchup {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    align-self: center;
+
+    overflow: visible;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+
+    background: #171717;
+}
+
+.bracket-final {
+    border-color: rgba(212, 175, 55, 0.38);
+
+    box-shadow:
+        0 0 25px rgba(212, 175, 55, 0.08);
+}
+
+/* ==========================================================
+   ROUND 1 CONNECTING LINES
+========================================================== */
+
+/* Every Round 1 card sends a short line right */
 
 .bracket-round-one .bracket-matchup::after {
     content: "";
@@ -2303,11 +2429,7 @@ toward the joining vertical line.
     pointer-events: none;
 }
 
-/*
-Upper Round 1 pair:
-child 2 = team vranic bye
-child 3 = Njokus African Village vs Win
-*/
+/* Upper pair vertical join */
 
 .bracket-round-one .bracket-matchup:nth-child(2)::before {
     content: "";
@@ -2317,18 +2439,14 @@ child 3 = Njokus African Village vs Win
     right: -24px;
 
     width: 1px;
-    height: calc(150% + 28px);
+    height: 140px;
 
     background: rgba(165, 165, 165, 0.68);
 
     pointer-events: none;
 }
 
-/*
-Lower Round 1 pair:
-child 4 = money mitch bye
-child 5 = Team Kertesz bye
-*/
+/* Lower pair vertical join */
 
 .bracket-round-one .bracket-matchup:nth-child(4)::before {
     content: "";
@@ -2338,22 +2456,20 @@ child 5 = Team Kertesz bye
     right: -24px;
 
     width: 1px;
-    height: calc(100% + 28px);
+    height: 140px;
 
     background: rgba(165, 165, 165, 0.68);
 
     pointer-events: none;
 }
 
-/*
-Continuation from each Round 1 join into Round 2.
-*/
+/* Joined upper path into upper semifinal */
 
-.bracket-round-one::before,
-.bracket-round-one::after {
+.bracket-round-one::before {
     content: "";
 
     position: absolute;
+    top: 190px;
     right: -48px;
 
     width: 24px;
@@ -2364,18 +2480,28 @@ Continuation from each Round 1 join into Round 2.
     pointer-events: none;
 }
 
-.bracket-round-one::before {
-    top: 35%;
-}
+/* Joined lower path into lower semifinal */
 
 .bracket-round-one::after {
-    top: 77%;
+    content: "";
+
+    position: absolute;
+    top: 420px;
+    right: -48px;
+
+    width: 24px;
+    height: 1px;
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
 }
 
-/*
-Every Round 2 matchup sends a horizontal line
-toward the championship join.
-*/
+/* ==========================================================
+   ROUND 2 CONNECTING LINES
+========================================================== */
+
+/* Both semifinal cards send lines right */
 
 .bracket-round-two .bracket-matchup::after {
     content: "";
@@ -2392,10 +2518,7 @@ toward the championship join.
     pointer-events: none;
 }
 
-/*
-Vertical line joining both Round 2 matchups.
-The heading is child 1, so the first matchup is child 2.
-*/
+/* Join both semifinal paths vertically */
 
 .bracket-round-two .bracket-matchup:nth-child(2)::before {
     content: "";
@@ -2405,22 +2528,20 @@ The heading is child 1, so the first matchup is child 2.
     right: -24px;
 
     width: 1px;
-    height: calc(100% + 28px);
+    height: 230px;
 
     background: rgba(165, 165, 165, 0.68);
 
     pointer-events: none;
 }
 
-/*
-Continuation from the Round 2 join into the championship.
-*/
+/* Continue joined semifinal path into final */
 
 .bracket-round-two::after {
     content: "";
 
     position: absolute;
-    top: 56%;
+    top: 305px;
     right: -48px;
 
     width: 24px;
@@ -2431,21 +2552,20 @@ Continuation from the Round 2 join into the championship.
     pointer-events: none;
 }
 
-/*
-The championship is the endpoint, so it has no outgoing line.
-*/
+/* Championship is the endpoint */
 
 .bracket-championship .bracket-matchup::before,
 .bracket-championship .bracket-matchup::after {
     display: none;
 }
 
-/* ---------- TABLET / MOBILE BRACKET ---------- */
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
 
     .playoff-bracket {
         min-width: 820px;
+        min-height: 540px;
 
         gap: 28px;
 
@@ -2453,49 +2573,20 @@ The championship is the endpoint, so it has no outgoing line.
     }
 
     .bracket-round {
-        gap: 20px;
+        height: 485px;
+
+        grid-template-rows:
+            56px
+            repeat(8, minmax(0, 1fr));
     }
 
     .bracket-round-heading h3 {
         font-size: 1.55rem;
     }
 
-    .bracket-team {
-        grid-template-columns: 20px minmax(0, 1fr) auto;
-
-        min-height: 44px;
-
-        gap: 6px;
-
-        padding: 7px 8px;
-    }
-
-    .bracket-seed {
-        font-size: 0.7rem;
-    }
-
-    .bracket-team-logo {
-        width: 20px;
-        height: 20px;
-    }
-
-    .bracket-team-name {
-        font-size: 0.78rem;
-    }
-
-    .bracket-score {
-        font-size: 0.76rem;
-    }
-
-    /*
-    Shorter connecting lines because the mobile bracket
-    uses a smaller gap between columns.
-    */
-
     .bracket-round-one .bracket-matchup::after,
     .bracket-round-two .bracket-matchup::after {
         right: -14px;
-
         width: 14px;
     }
 
@@ -2505,9 +2596,31 @@ The championship is the endpoint, so it has no outgoing line.
         right: -14px;
     }
 
-    .bracket-round-one::before,
-    .bracket-round-one::after,
+    .bracket-round-one .bracket-matchup:nth-child(2)::before,
+    .bracket-round-one .bracket-matchup:nth-child(4)::before {
+        height: 120px;
+    }
+
+    .bracket-round-two .bracket-matchup:nth-child(2)::before {
+        height: 200px;
+    }
+
+    .bracket-round-one::before {
+        top: 166px;
+        right: -28px;
+
+        width: 14px;
+    }
+
+    .bracket-round-one::after {
+        top: 366px;
+        right: -28px;
+
+        width: 14px;
+    }
+
     .bracket-round-two::after {
+        top: 266px;
         right: -28px;
 
         width: 14px;
