@@ -2305,27 +2305,27 @@ nav a:hover {
         );
 }
 
-/* ---------- ROUND POSITIONING ---------- */
+/* ==========================================================
+   BRACKET ROUND POSITIONING
+========================================================== */
 
 .bracket-round {
     position: relative;
-
     height: 560px;
-
-    display: grid;
-    grid-template-rows:
-        62px
-        repeat(8, minmax(0, 1fr));
-
     overflow: visible;
 }
 
-.bracket-round-heading {
-    grid-row: 1;
+/* Keep every round title aligned across the top */
 
-    align-self: start;
+.bracket-round-heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
 
     text-align: center;
+    z-index: 4;
 }
 
 .bracket-round-heading h3 {
@@ -2343,62 +2343,59 @@ nav a:hover {
     font-size: 0.78rem;
 }
 
-/*
-Round 1 keeps all four existing cards:
-1. team vranic bye
-2. Njokus vs Win
-3. money mitch bye
-4. Team Kertesz bye
-*/
-
-.bracket-round-one .bracket-matchup:nth-child(2) {
-    grid-row: 2;
-}
-
-.bracket-round-one .bracket-matchup:nth-child(3) {
-    grid-row: 4;
-}
-
-.bracket-round-one .bracket-matchup:nth-child(4) {
-    grid-row: 6;
-}
-
-.bracket-round-one .bracket-matchup:nth-child(5) {
-    grid-row: 8;
-}
-
-/* Two semifinal cards centered between the Round 1 pairings */
-
-.bracket-round-two .bracket-matchup:nth-child(2) {
-    grid-row: 3;
-}
-
-.bracket-round-two .bracket-matchup:nth-child(3) {
-    grid-row: 7;
-}
-
-/* Championship centered vertically */
-
-.bracket-championship .bracket-matchup:nth-child(2) {
-    grid-row: 5;
-}
-
-/* ---------- MATCHUPS ---------- */
+/* ==========================================================
+   MATCHUP POSITIONING
+========================================================== */
 
 .bracket-matchup {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    left: 0;
 
     width: 100%;
 
-    align-self: center;
+    transform: translateY(-50%);
 
+    z-index: 2;
     overflow: visible;
 
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
 
     background: #171717;
+}
+
+/* Round 1 — four matchup cards */
+
+.bracket-round-one .bracket-matchup:nth-child(2) {
+    top: 18%;
+}
+
+.bracket-round-one .bracket-matchup:nth-child(3) {
+    top: 38%;
+}
+
+.bracket-round-one .bracket-matchup:nth-child(4) {
+    top: 62%;
+}
+
+.bracket-round-one .bracket-matchup:nth-child(5) {
+    top: 82%;
+}
+
+/* Round 2 — centered between the Round 1 pairs */
+
+.bracket-round-two .bracket-matchup:nth-child(2) {
+    top: 28%;
+}
+
+.bracket-round-two .bracket-matchup:nth-child(3) {
+    top: 72%;
+}
+
+/* Championship — centered between both semifinals */
+
+.bracket-championship .bracket-matchup:nth-child(2) {
+    top: 50%;
 }
 
 .bracket-final {
@@ -2409,10 +2406,13 @@ Round 1 keeps all four existing cards:
 }
 
 /* ==========================================================
-   ROUND 1 CONNECTING LINES
+   ROUND 1 CONNECTORS
 ========================================================== */
 
-/* Every Round 1 card sends a short line right */
+/*
+Every Round 1 card sends a horizontal line halfway
+through the gap toward Round 2.
+*/
 
 .bracket-round-one .bracket-matchup::after {
     content: "";
@@ -2424,12 +2424,15 @@ Round 1 keeps all four existing cards:
     width: 24px;
     height: 1px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
-/* Upper pair vertical join */
+/*
+Upper vertical join:
+connects team vranic's BYE card to the Win/Njokus card.
+18% → 38%
+*/
 
 .bracket-round-one .bracket-matchup:nth-child(2)::before {
     content: "";
@@ -2439,14 +2442,17 @@ Round 1 keeps all four existing cards:
     right: -24px;
 
     width: 1px;
-    height: 140px;
+    height: 112px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
-/* Lower pair vertical join */
+/*
+Lower vertical join:
+connects the money mitch BYE card to the Team Kertesz BYE card.
+62% → 82%
+*/
 
 .bracket-round-one .bracket-matchup:nth-child(4)::before {
     content: "";
@@ -2456,52 +2462,55 @@ Round 1 keeps all four existing cards:
     right: -24px;
 
     width: 1px;
-    height: 140px;
+    height: 112px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
-/* Joined upper path into upper semifinal */
+/*
+Upper joined path continues from the midpoint
+between 18% and 38%, which is 28%.
+*/
 
 .bracket-round-one::before {
     content: "";
 
     position: absolute;
-    top: 190px;
+    top: 28%;
     right: -48px;
 
     width: 24px;
     height: 1px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
-/* Joined lower path into lower semifinal */
+/*
+Lower joined path continues from the midpoint
+between 62% and 82%, which is 72%.
+*/
 
 .bracket-round-one::after {
     content: "";
 
     position: absolute;
-    top: 420px;
+    top: 72%;
     right: -48px;
 
     width: 24px;
     height: 1px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
 /* ==========================================================
-   ROUND 2 CONNECTING LINES
+   ROUND 2 CONNECTORS
 ========================================================== */
 
-/* Both semifinal cards send lines right */
+/* Both semifinal cards send a short horizontal line right */
 
 .bracket-round-two .bracket-matchup::after {
     content: "";
@@ -2513,12 +2522,14 @@ Round 1 keeps all four existing cards:
     width: 24px;
     height: 1px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
-/* Join both semifinal paths vertically */
+/*
+Vertical join between the two semifinal cards.
+28% → 72%
+*/
 
 .bracket-round-two .bracket-matchup:nth-child(2)::before {
     content: "";
@@ -2528,27 +2539,28 @@ Round 1 keeps all four existing cards:
     right: -24px;
 
     width: 1px;
-    height: 230px;
+    height: 246px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
-/* Continue joined semifinal path into final */
+/*
+Joined semifinal path continues from the midpoint,
+which is exactly 50%.
+*/
 
 .bracket-round-two::after {
     content: "";
 
     position: absolute;
-    top: 305px;
+    top: 50%;
     right: -48px;
 
     width: 24px;
     height: 1px;
 
-    background: rgba(165, 165, 165, 0.68);
-
+    background: rgba(165, 165, 165, 0.72);
     pointer-events: none;
 }
 
@@ -2559,25 +2571,14 @@ Round 1 keeps all four existing cards:
     display: none;
 }
 
-/* ---------- MOBILE ---------- */
+/* ==========================================================
+   MOBILE BRACKET POSITIONING
+========================================================== */
 
 @media (max-width: 768px) {
 
-    .playoff-bracket {
-        min-width: 820px;
-        min-height: 540px;
-
-        gap: 28px;
-
-        padding: 18px;
-    }
-
     .bracket-round {
         height: 485px;
-
-        grid-template-rows:
-            56px
-            repeat(8, minmax(0, 1fr));
     }
 
     .bracket-round-heading h3 {
@@ -2598,31 +2599,17 @@ Round 1 keeps all four existing cards:
 
     .bracket-round-one .bracket-matchup:nth-child(2)::before,
     .bracket-round-one .bracket-matchup:nth-child(4)::before {
-        height: 120px;
+        height: 97px;
     }
 
     .bracket-round-two .bracket-matchup:nth-child(2)::before {
-        height: 200px;
+        height: 213px;
     }
 
-    .bracket-round-one::before {
-        top: 166px;
-        right: -28px;
-
-        width: 14px;
-    }
-
-    .bracket-round-one::after {
-        top: 366px;
-        right: -28px;
-
-        width: 14px;
-    }
-
+    .bracket-round-one::before,
+    .bracket-round-one::after,
     .bracket-round-two::after {
-        top: 266px;
         right: -28px;
-
         width: 14px;
     }
 }
