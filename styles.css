@@ -1985,84 +1985,111 @@ nav a:hover {
 ========================================================== */
 
 .conference-tables-container {
+
     width: 100%;
 
     padding: 28px;
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,.08);
     border-radius: 18px;
 
     background:
         linear-gradient(
             180deg,
-            rgba(24, 24, 24, 0.96),
-            rgba(16, 16, 16, 0.98)
+            rgba(24,24,24,.96),
+            rgba(16,16,16,.98)
         );
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.25);
+        0 15px 35px rgba(0,0,0,.25);
+
 }
 
 .conference-table-group + .conference-table-group {
-    margin-top: 42px;
+
+    margin-top: 44px;
     padding-top: 36px;
 
-    border-top: 1px solid rgba(212, 175, 55, 0.22);
+    border-top: 1px solid rgba(255,255,255,.08);
+
 }
 
 .conference-table-group h3 {
+
     margin-bottom: 20px;
 
+    text-align: center;
+
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.15rem;
+    font-size: 2.2rem;
     letter-spacing: 1.5px;
 
     color: #D4AF37;
-    text-align: center;
+
 }
 
-.conference-standings-table {
-    min-width: 820px;
+.conference-standings-table{
+
+    min-width:900px;
+
 }
 
 .conference-standings-table th:first-child,
-.conference-standings-table td:first-child {
-    width: 56px;
+.conference-standings-table td:first-child{
+
+    width:60px;
+
 }
 
 .conference-standings-table th:nth-child(2),
-.conference-standings-table td:nth-child(2) {
-    min-width: 300px;
+.conference-standings-table td:nth-child(2){
+
+    min-width:310px;
+
 }
 
 .conference-standings-table th:last-child,
-.conference-standings-table td:last-child {
-    padding-right: 26px;
+.conference-standings-table td:last-child{
+
+    padding-right:28px;
+
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .conference-tables-container {
-        padding: 18px 12px;
+    .conference-tables-container{
+
+        padding:18px 10px;
+
     }
 
-    .conference-table-group + .conference-table-group {
-        margin-top: 32px;
-        padding-top: 29px;
+    .conference-table-group + .conference-table-group{
+
+        margin-top:34px;
+        padding-top:28px;
+
     }
 
-    .conference-table-group h3 {
-        font-size: 1.7rem;
+    .conference-table-group h3{
+
+        font-size:1.75rem;
+
     }
+
 }
 
-@media (max-width: 390px) {
+@media (max-width:390px){
 
-    .conference-tables-container {
-        padding: 15px 7px;
+    .conference-tables-container{
+
+        padding:14px 6px;
+
     }
 
-    .conference-table-group h3 {
-        font-size: 1.45rem;
+    .conference-table-group h3{
+
+        font-size:1.45rem;
+
     }
+
 }
