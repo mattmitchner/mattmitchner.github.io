@@ -2098,11 +2098,24 @@ nav a:hover {
    PLAYOFF BRACKET
 ========================================================== */
 
+.playoff-bracket-scroll {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 12px;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
 .playoff-bracket {
     min-width: 980px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
 
     gap: 48px;
@@ -2120,17 +2133,32 @@ nav a:hover {
         );
 }
 
+/* ---------- ROUNDS ---------- */
+
 .bracket-round {
     position: relative;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 
     gap: 28px;
+
+    overflow: visible;
+}
+
+.bracket-round-one {
+    justify-content: space-between;
+}
+
+.bracket-round-two,
+.bracket-championship {
+    justify-content: center;
 }
 
 .bracket-round-heading {
+    position: relative;
+    z-index: 3;
+
     text-align: center;
 }
 
@@ -2149,8 +2177,11 @@ nav a:hover {
     font-size: 0.78rem;
 }
 
+/* ---------- MATCHUP CARDS ---------- */
+
 .bracket-matchup {
     position: relative;
+    z-index: 2;
 
     overflow: visible;
 
@@ -2158,45 +2189,6 @@ nav a:hover {
     border-radius: 12px;
 
     background: #171717;
-}
-
-/* Gray advancement line extending to the next round */
-
-.bracket-round:not(.bracket-championship)
-.bracket-matchup::after {
-    content: "";
-
-    position: absolute;
-    top: 50%;
-    right: -49px;
-
-    width: 49px;
-    height: 1px;
-
-    transform: translateY(-50%);
-
-    background: rgba(170, 170, 170, 0.48);
-}
-
-/* Keep the championship matchup centered vertically */
-
-.bracket-championship {
-    justify-content: center;
-}
-
-.bracket-championship .bracket-round-heading {
-    margin-bottom: 8px;
-}
-
-.bracket-final {
-    width: 100%;
-
-    align-self: center;
-
-    border-color: rgba(212, 175, 55, 0.38);
-
-    box-shadow:
-        0 0 25px rgba(212, 175, 55, 0.08);
 }
 
 .bracket-team {
@@ -2245,7 +2237,14 @@ nav a:hover {
     height: 24px;
 
     flex-shrink: 0;
+
     object-fit: contain;
+
+    transition: transform 0.25s ease;
+}
+
+.bracket-team-link:hover .bracket-team-logo {
+    transform: scale(1.05);
 }
 
 .bracket-team-name {
@@ -2269,9 +2268,179 @@ nav a:hover {
     opacity: 0.5;
 }
 
-.bracket-bye .bracket-team {
-    grid-template-columns: 24px minmax(0, 1fr) auto;
+.bracket-final {
+    width: 100%;
+
+    align-self: center;
+
+    border-color: rgba(212, 175, 55, 0.38);
+
+    box-shadow:
+        0 0 25px rgba(212, 175, 55, 0.08);
 }
+
+/* ==========================================================
+   BRACKET CONNECTING LINES
+========================================================== */
+
+/*
+Every Round 1 matchup sends a short horizontal line
+toward the joining vertical line.
+*/
+
+.bracket-round-one .bracket-matchup::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: -24px;
+
+    width: 24px;
+    height: 1px;
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+/*
+Upper Round 1 pair:
+child 2 = team vranic bye
+child 3 = Njokus African Village vs Win
+*/
+
+.bracket-round-one .bracket-matchup:nth-child(2)::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: -24px;
+
+    width: 1px;
+    height: calc(150% + 28px);
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+/*
+Lower Round 1 pair:
+child 4 = money mitch bye
+child 5 = Team Kertesz bye
+*/
+
+.bracket-round-one .bracket-matchup:nth-child(4)::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: -24px;
+
+    width: 1px;
+    height: calc(100% + 28px);
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+/*
+Continuation from each Round 1 join into Round 2.
+*/
+
+.bracket-round-one::before,
+.bracket-round-one::after {
+    content: "";
+
+    position: absolute;
+    right: -48px;
+
+    width: 24px;
+    height: 1px;
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+.bracket-round-one::before {
+    top: 35%;
+}
+
+.bracket-round-one::after {
+    top: 77%;
+}
+
+/*
+Every Round 2 matchup sends a horizontal line
+toward the championship join.
+*/
+
+.bracket-round-two .bracket-matchup::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: -24px;
+
+    width: 24px;
+    height: 1px;
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+/*
+Vertical line joining both Round 2 matchups.
+The heading is child 1, so the first matchup is child 2.
+*/
+
+.bracket-round-two .bracket-matchup:nth-child(2)::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: -24px;
+
+    width: 1px;
+    height: calc(100% + 28px);
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+/*
+Continuation from the Round 2 join into the championship.
+*/
+
+.bracket-round-two::after {
+    content: "";
+
+    position: absolute;
+    top: 56%;
+    right: -48px;
+
+    width: 24px;
+    height: 1px;
+
+    background: rgba(165, 165, 165, 0.68);
+
+    pointer-events: none;
+}
+
+/*
+The championship is the endpoint, so it has no outgoing line.
+*/
+
+.bracket-championship .bracket-matchup::before,
+.bracket-championship .bracket-matchup::after {
+    display: none;
+}
+
+/* ---------- TABLET / MOBILE BRACKET ---------- */
 
 @media (max-width: 768px) {
 
@@ -2279,6 +2448,7 @@ nav a:hover {
         min-width: 820px;
 
         gap: 28px;
+
         padding: 18px;
     }
 
@@ -2296,7 +2466,12 @@ nav a:hover {
         min-height: 44px;
 
         gap: 6px;
+
         padding: 7px 8px;
+    }
+
+    .bracket-seed {
+        font-size: 0.7rem;
     }
 
     .bracket-team-logo {
@@ -2312,9 +2487,29 @@ nav a:hover {
         font-size: 0.76rem;
     }
 
-    .bracket-round:not(.bracket-championship)
-    .bracket-matchup::after {
-        right: -29px;
-        width: 29px;
+    /*
+    Shorter connecting lines because the mobile bracket
+    uses a smaller gap between columns.
+    */
+
+    .bracket-round-one .bracket-matchup::after,
+    .bracket-round-two .bracket-matchup::after {
+        right: -14px;
+
+        width: 14px;
+    }
+
+    .bracket-round-one .bracket-matchup:nth-child(2)::before,
+    .bracket-round-one .bracket-matchup:nth-child(4)::before,
+    .bracket-round-two .bracket-matchup:nth-child(2)::before {
+        right: -14px;
+    }
+
+    .bracket-round-one::before,
+    .bracket-round-one::after,
+    .bracket-round-two::after {
+        right: -28px;
+
+        width: 14px;
     }
 }
