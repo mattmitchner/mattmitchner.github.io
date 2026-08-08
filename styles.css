@@ -2613,3 +2613,539 @@ which is exactly 50%.
         width: 14px;
     }
 }
+
+/* ==========================================================
+   TEAM SEASON PAGE
+========================================================== */
+
+.team-season-main {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+    padding: 115px 24px 40px;
+}
+
+.team-season-back {
+    display: inline-block;
+
+    margin-bottom: 26px;
+
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.team-season-back:hover {
+    color: #D4AF37;
+}
+
+/* ---------- COMPACT TEAM CARD ---------- */
+
+.team-season-card {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(24, 24, 24, 0.97),
+            rgba(16, 16, 16, 0.98)
+        );
+
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.team-season-logo {
+    width: 76px;
+    height: 76px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.team-season-identity {
+    width: 100%;
+    min-width: 0;
+}
+
+.team-season-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.team-season-title-row h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.7rem;
+    letter-spacing: 1.5px;
+    line-height: 1;
+}
+
+.team-season-summary {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #9d9d9d;
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.team-season-summary-divider {
+    color: #5f5f5f;
+}
+
+.team-season-identity > p {
+    margin-top: 6px;
+
+    color: #9a9a9a;
+    font-size: 0.94rem;
+}
+
+/* ---------- ROSTER SECTIONS ---------- */
+
+.team-roster-section {
+    width: 100%;
+
+    margin: 62px auto;
+}
+
+.roster-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+
+    background: #151515;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.roster-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    color: #ffffff;
+}
+
+.roster-overview-table {
+    min-width: 930px;
+}
+
+.position-stat-table {
+    min-width: 1120px;
+}
+
+.roster-table th,
+.roster-table td {
+    padding: 12px 14px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    white-space: nowrap;
+}
+
+.roster-table th {
+    color: #9d9d9d;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    text-align: right;
+}
+
+.roster-table td {
+    color: #d7d7d7;
+    font-size: 0.88rem;
+
+    text-align: right;
+}
+
+.roster-table th:first-child,
+.roster-table td:first-child {
+    width: 64px;
+
+    text-align: left;
+}
+
+.roster-table th:nth-child(2),
+.roster-table td:nth-child(2) {
+    min-width: 270px;
+
+    text-align: left;
+}
+
+.roster-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* ---------- OVERVIEW TOP LABELS ---------- */
+
+.roster-super-header th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    color: #D4AF37;
+
+    text-align: center;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1.3px;
+
+    background: rgba(212, 175, 55, 0.035);
+}
+
+/* ---------- PLAYER BLOCK ---------- */
+
+.roster-player {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.player-icon-slot {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #454545 0%,
+            #2d2d2d 45%,
+            #222222 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.roster-player-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.roster-player-name {
+    color: #ffffff;
+
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.roster-player-meta {
+    margin-top: 4px;
+
+    color: #7f7f7f;
+
+    font-size: 0.74rem;
+    font-weight: 500;
+}
+
+.player-status {
+    margin-left: 5px;
+
+    color: #e15d5d;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.roster-player-empty .roster-player-name {
+    color: #858585;
+}
+
+/* ---------- SLOT COLUMN ---------- */
+
+.roster-slot {
+    color: #8f8f8f !important;
+
+    font-size: 0.8rem !important;
+    font-weight: 600;
+}
+
+/* ---------- SMALL GAP BETWEEN K AND BN ---------- */
+
+.roster-gap-row td {
+    height: 12px;
+
+    padding: 0 !important;
+
+    border-bottom: 0 !important;
+
+    background: transparent;
+}
+
+/* ---------- IR ---------- */
+
+.roster-ir-row td {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---------- POSITIVE / NEGATIVE ---------- */
+
+.stat-positive {
+    color: #57c785 !important;
+}
+
+.stat-negative {
+    color: #e36a6a !important;
+}
+
+/* ==========================================================
+   POSITION STATS
+========================================================== */
+
+.position-stat-table-block {
+    margin-top: 28px;
+}
+
+.position-stat-table-block + .position-stat-table-block {
+    margin-top: 34px;
+}
+
+.position-stat-title {
+    margin-bottom: 12px;
+
+    color: #D4AF37;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1.3px;
+}
+
+.position-group-header th {
+    padding-top: 9px;
+    padding-bottom: 9px;
+
+    color: #D4AF37;
+
+    text-align: center;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+
+    background: rgba(212, 175, 55, 0.035);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.position-group-header th:last-child {
+    border-right: 0;
+}
+
+/* ---------- TABLE GROUP SEPARATORS ---------- */
+
+.position-stat-table thead tr:nth-child(2) th {
+    border-right: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.position-stat-table thead tr:nth-child(2) th:last-child {
+    border-right: 0;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .team-season-main {
+        padding: 100px 14px 30px;
+    }
+
+    .team-season-card {
+        gap: 12px;
+
+        padding: 15px 14px;
+    }
+
+    .team-season-logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .team-season-title-row {
+        gap: 10px;
+    }
+
+    .team-season-title-row h1 {
+        font-size: 2.1rem;
+    }
+
+    .team-season-summary {
+        gap: 5px;
+
+        font-size: 0.76rem;
+    }
+
+    .team-season-identity > p {
+        font-size: 0.82rem;
+    }
+
+    .team-roster-section {
+        margin: 48px auto;
+    }
+
+    .roster-overview-table {
+        min-width: 820px;
+    }
+
+    .position-stat-table {
+        min-width: 1020px;
+    }
+
+    .roster-table th,
+    .roster-table td {
+        padding: 10px 10px;
+    }
+
+    .roster-table th {
+        font-size: 0.66rem;
+    }
+
+    .roster-table td {
+        font-size: 0.8rem;
+    }
+
+    .roster-table th:nth-child(2),
+    .roster-table td:nth-child(2) {
+        min-width: 235px;
+    }
+
+    .player-icon-slot {
+        width: 34px;
+        height: 34px;
+    }
+
+    .roster-player-name {
+        font-size: 0.84rem;
+    }
+
+    .roster-player-meta {
+        font-size: 0.68rem;
+    }
+
+    .player-status {
+        font-size: 0.67rem;
+    }
+
+    .position-stat-title {
+        font-size: 1.55rem;
+    }
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 390px) {
+
+    .team-season-main {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .team-season-card {
+        gap: 9px;
+
+        padding: 13px 10px;
+    }
+
+    .team-season-logo {
+        width: 54px;
+        height: 54px;
+    }
+
+    .team-season-title-row {
+        align-items: flex-start;
+    }
+
+    .team-season-title-row h1 {
+        font-size: 1.8rem;
+    }
+
+    .team-season-summary {
+        flex-direction: column;
+        align-items: flex-end;
+
+        gap: 1px;
+
+        font-size: 0.68rem;
+        line-height: 1.15;
+    }
+
+    .team-season-summary-divider {
+        display: none;
+    }
+
+    .team-season-identity > p {
+        font-size: 0.76rem;
+    }
+
+    .roster-overview-table {
+        min-width: 760px;
+    }
+
+    .position-stat-table {
+        min-width: 950px;
+    }
+
+    .roster-table th,
+    .roster-table td {
+        padding: 9px 8px;
+    }
+
+    .roster-table th:nth-child(2),
+    .roster-table td:nth-child(2) {
+        min-width: 215px;
+    }
+
+    .player-icon-slot {
+        width: 31px;
+        height: 31px;
+    }
+
+    .roster-player {
+        gap: 8px;
+    }
+
+    .roster-player-name {
+        font-size: 0.8rem;
+    }
+
+    .roster-player-meta {
+        font-size: 0.64rem;
+    }
+}
