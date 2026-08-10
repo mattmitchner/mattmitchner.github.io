@@ -3267,3 +3267,29 @@ which is exactly 50%.
         font-size: 0.75rem;
     }
 }
+
+.fantasy-roster-slot {
+    width: 38px;
+
+    flex-shrink: 0;
+
+    color: #8b8b8b;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.fantasy-roster-slot {
+    width: 31px;
+    font-size: 0.65rem;
+}
+
+.fantasy-roster-slot {
+    width: 27px;
+    font-size: 0.59rem;
+}
