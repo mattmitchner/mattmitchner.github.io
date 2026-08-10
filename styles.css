@@ -2620,19 +2620,25 @@ which is exactly 50%.
 
 .team-season-main {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1000px;
 
     margin: 0 auto;
-    padding: 115px 24px 40px;
+
+    padding: 115px 24px 45px;
 }
+
+
+/* ---------- BACK LINK ---------- */
 
 .team-season-back {
     display: inline-block;
 
-    margin-bottom: 26px;
+    margin-bottom: 25px;
 
     color: #cfcfcf;
+
     text-decoration: none;
+
     font-size: 0.9rem;
     font-weight: 600;
 
@@ -2643,7 +2649,10 @@ which is exactly 50%.
     color: #D4AF37;
 }
 
-/* ---------- COMPACT TEAM CARD ---------- */
+
+/* ==========================================================
+   COMPACT TEAM CARD
+========================================================== */
 
 .team-season-card {
     width: 100%;
@@ -2688,12 +2697,14 @@ which is exactly 50%.
     justify-content: space-between;
     align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 .team-season-title-row h1 {
     font-family: 'Bebas Neue', sans-serif;
+
     font-size: 2.7rem;
+
     letter-spacing: 1.5px;
     line-height: 1;
 }
@@ -2702,284 +2713,343 @@ which is exactly 50%.
     display: flex;
     align-items: center;
 
-    gap: 8px;
+    gap: 7px;
 
-    color: #9d9d9d;
-    font-size: 0.92rem;
+    color: #999999;
+
+    font-size: 0.9rem;
     font-weight: 600;
 
     white-space: nowrap;
-}
-
-.team-season-summary-divider {
-    color: #5f5f5f;
 }
 
 .team-season-identity > p {
     margin-top: 6px;
 
-    color: #9a9a9a;
-    font-size: 0.94rem;
+    color: #949494;
+
+    font-size: 0.92rem;
 }
 
-/* ---------- ROSTER SECTIONS ---------- */
 
-.team-roster-section {
-    width: 100%;
+/* ==========================================================
+   SECTION TITLES
+========================================================== */
 
-    margin: 62px auto;
+.team-roster-cards-section,
+.team-matchup-history {
+    margin-top: 58px;
 }
 
-.roster-table-wrapper {
-    width: 100%;
-    max-width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 15px;
-
-    background: #151515;
-
-    -webkit-overflow-scrolling: touch;
+.team-section-title {
+    margin-bottom: 19px;
 }
 
-.roster-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    color: #ffffff;
-}
-
-.roster-overview-table {
-    min-width: 930px;
-}
-
-.position-stat-table {
-    min-width: 1120px;
-}
-
-.roster-table th,
-.roster-table td {
-    padding: 12px 14px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
-    white-space: nowrap;
-}
-
-.roster-table th {
-    color: #9d9d9d;
-
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-
-    text-align: right;
-}
-
-.roster-table td {
-    color: #d7d7d7;
-    font-size: 0.88rem;
-
-    text-align: right;
-}
-
-.roster-table th:first-child,
-.roster-table td:first-child {
-    width: 64px;
-
-    text-align: left;
-}
-
-.roster-table th:nth-child(2),
-.roster-table td:nth-child(2) {
-    min-width: 270px;
-
-    text-align: left;
-}
-
-.roster-table tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-/* ---------- OVERVIEW TOP LABELS ---------- */
-
-.roster-super-header th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    color: #D4AF37;
-
-    text-align: center;
-
+.team-section-title h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1.3px;
 
-    background: rgba(212, 175, 55, 0.035);
+    font-size: 2.75rem;
+
+    letter-spacing: 1.7px;
 }
 
-/* ---------- PLAYER BLOCK ---------- */
+.bench-title {
+    margin-top: 43px;
+}
 
-.roster-player {
-    display: inline-flex;
-    align-items: center;
+
+/* ==========================================================
+   PLAYER CARDS
+========================================================== */
+
+.player-card-list {
+    display: flex;
+    flex-direction: column;
 
     gap: 10px;
-
-    min-width: 0;
 }
 
-.player-icon-slot {
-    width: 38px;
-    height: 38px;
+.fantasy-player-card {
+    width: 100%;
+
+    min-height: 82px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 13px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+
+    background: #171717;
+}
+
+.fantasy-player-left {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.fantasy-player-icon {
+    width: 48px;
+    height: 48px;
 
     flex-shrink: 0;
 
     border-radius: 50%;
 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
     background:
         radial-gradient(
             circle at 50% 35%,
-            #454545 0%,
-            #2d2d2d 45%,
-            #222222 100%
+            #464646,
+            #292929 55%,
+            #202020
         );
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.roster-player-info {
-    display: flex;
-    flex-direction: column;
-
+.fantasy-player-info {
     min-width: 0;
 }
 
-.roster-player-name {
+.fantasy-player-info h3 {
     color: #ffffff;
 
+    font-size: 1rem;
     font-weight: 700;
-    line-height: 1.1;
 }
 
-.roster-player-meta {
+.fantasy-player-info p {
     margin-top: 4px;
 
     color: #7f7f7f;
 
-    font-size: 0.74rem;
-    font-weight: 500;
+    font-size: 0.76rem;
 }
 
-.player-status {
-    margin-left: 5px;
+.fantasy-player-stats {
+    flex-shrink: 0;
 
-    color: #e15d5d;
+    display: flex;
+    align-items: center;
 
-    font-size: 0.72rem;
-    font-weight: 800;
+    gap: 36px;
 }
 
-.roster-player-empty .roster-player-name {
-    color: #858585;
+.fantasy-player-stats > div {
+    min-width: 100px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
 }
 
-/* ---------- SLOT COLUMN ---------- */
+.fantasy-player-stats span {
+    color: #777777;
 
-.roster-slot {
-    color: #8f8f8f !important;
+    font-size: 0.67rem;
 
-    font-size: 0.8rem !important;
-    font-weight: 600;
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
 }
 
-/* ---------- SMALL GAP BETWEEN K AND BN ---------- */
+.fantasy-player-stats strong {
+    margin-top: 4px;
 
-.roster-gap-row td {
-    height: 12px;
+    color: #ffffff;
 
-    padding: 0 !important;
-
-    border-bottom: 0 !important;
-
-    background: transparent;
+    font-size: 0.95rem;
 }
 
-/* ---------- IR ---------- */
-
-.roster-ir-row td {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* ---------- POSITIVE / NEGATIVE ---------- */
-
-.stat-positive {
-    color: #57c785 !important;
-}
-
-.stat-negative {
-    color: #e36a6a !important;
-}
 
 /* ==========================================================
-   POSITION STATS
+   MATCHUP HISTORY
 ========================================================== */
 
-.position-stat-table-block {
-    margin-top: 28px;
+.matchup-history-card {
+    width: 100%;
+
+    padding: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(24, 24, 24, 0.97),
+            rgba(14, 14, 14, 0.98)
+        );
 }
 
-.position-stat-table-block + .position-stat-table-block {
-    margin-top: 34px;
-}
-
-.position-stat-title {
-    margin-bottom: 12px;
-
-    color: #D4AF37;
+.matchup-phase-title {
+    margin-bottom: 22px;
 
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 1.3px;
-}
 
-.position-group-header th {
-    padding-top: 9px;
-    padding-bottom: 9px;
+    font-size: 2rem;
+
+    letter-spacing: 1.5px;
 
     color: #D4AF37;
-
-    text-align: center;
-
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-
-    background: rgba(212, 175, 55, 0.035);
-
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.position-group-header th:last-child {
-    border-right: 0;
+.postseason-title {
+    margin-top: 42px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ---------- TABLE GROUP SEPARATORS ---------- */
 
-.position-stat-table thead tr:nth-child(2) th {
-    border-right: 1px solid rgba(255, 255, 255, 0.045);
+/* ---------- WEEK ---------- */
+
+.weekly-matchup {
+    width: 100%;
+
+    margin-bottom: 17px;
 }
 
-.position-stat-table thead tr:nth-child(2) th:last-child {
-    border-right: 0;
+.weekly-matchup:last-child {
+    margin-bottom: 0;
 }
 
-/* ---------- MOBILE ---------- */
+.weekly-matchup-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #8d8d8d;
+
+    font-size: 0.77rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* ---------- SCORECARD ---------- */
+
+.weekly-scorecard {
+    width: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 11px;
+
+    background: #171717;
+}
+
+.weekly-team-row {
+    min-height: 51px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        88px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 13px;
+}
+
+.weekly-team-row + .weekly-team-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.weekly-team {
+    min-width: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.weekly-team:hover {
+    color: #D4AF37;
+}
+
+.weekly-team img {
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    transition: transform 0.25s ease;
+}
+
+.weekly-team:hover img {
+    transform: scale(1.05);
+}
+
+.weekly-team strong {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 0.9rem;
+}
+
+.weekly-record {
+    color: #888888;
+
+    font-size: 0.78rem;
+
+    white-space: nowrap;
+}
+
+.weekly-score {
+    color: #ffffff;
+
+    font-size: 0.93rem;
+    font-weight: 700;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+.weekly-winner {
+    opacity: 1;
+}
+
+.weekly-loser {
+    opacity: 0.5;
+}
+
+
+/* ==========================================================
+   TEAM PAGE MOBILE
+========================================================== */
 
 @media (max-width: 768px) {
 
@@ -2998,17 +3068,11 @@ which is exactly 50%.
         height: 62px;
     }
 
-    .team-season-title-row {
-        gap: 10px;
-    }
-
     .team-season-title-row h1 {
-        font-size: 2.1rem;
+        font-size: 2.15rem;
     }
 
     .team-season-summary {
-        gap: 5px;
-
         font-size: 0.76rem;
     }
 
@@ -3016,71 +3080,97 @@ which is exactly 50%.
         font-size: 0.82rem;
     }
 
-    .team-roster-section {
-        margin: 48px auto;
+    .team-roster-cards-section,
+    .team-matchup-history {
+        margin-top: 47px;
     }
 
-    .roster-overview-table {
-        min-width: 820px;
+    .team-section-title h2 {
+        font-size: 2.3rem;
     }
 
-    .position-stat-table {
-        min-width: 1020px;
+    .fantasy-player-card {
+        min-height: 75px;
+
+        padding: 11px 12px;
+
+        gap: 12px;
     }
 
-    .roster-table th,
-    .roster-table td {
-        padding: 10px 10px;
+    .fantasy-player-icon {
+        width: 42px;
+        height: 42px;
     }
 
-    .roster-table th {
-        font-size: 0.66rem;
+    .fantasy-player-info h3 {
+        font-size: 0.9rem;
     }
 
-    .roster-table td {
-        font-size: 0.8rem;
+    .fantasy-player-info p {
+        font-size: 0.7rem;
     }
 
-    .roster-table th:nth-child(2),
-    .roster-table td:nth-child(2) {
-        min-width: 235px;
+    .fantasy-player-stats {
+        gap: 18px;
     }
 
-    .player-icon-slot {
-        width: 34px;
-        height: 34px;
+    .fantasy-player-stats > div {
+        min-width: 75px;
     }
 
-    .roster-player-name {
+    .fantasy-player-stats span {
+        font-size: 0.57rem;
+    }
+
+    .fantasy-player-stats strong {
         font-size: 0.84rem;
     }
 
-    .roster-player-meta {
-        font-size: 0.68rem;
+    .matchup-history-card {
+        padding: 17px 12px;
     }
 
-    .player-status {
-        font-size: 0.67rem;
+    .matchup-phase-title {
+        font-size: 1.7rem;
     }
 
-    .position-stat-title {
-        font-size: 1.55rem;
+    .weekly-team-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            70px;
+
+        padding: 8px 9px;
+    }
+
+    .weekly-team img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .weekly-team strong {
+        font-size: 0.8rem;
+    }
+
+    .weekly-record {
+        font-size: 0.7rem;
+    }
+
+    .weekly-score {
+        font-size: 0.82rem;
     }
 }
 
-/* ---------- SMALL PHONES ---------- */
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
 
 @media (max-width: 390px) {
 
     .team-season-main {
         padding-left: 9px;
         padding-right: 9px;
-    }
-
-    .team-season-card {
-        gap: 9px;
-
-        padding: 13px 10px;
     }
 
     .team-season-logo {
@@ -3093,59 +3183,87 @@ which is exactly 50%.
     }
 
     .team-season-title-row h1 {
-        font-size: 1.8rem;
+        font-size: 1.85rem;
     }
 
     .team-season-summary {
         flex-direction: column;
+
         align-items: flex-end;
 
         gap: 1px;
 
-        font-size: 0.68rem;
-        line-height: 1.15;
+        font-size: 0.66rem;
     }
 
-    .team-season-summary-divider {
-        display: none;
+    .fantasy-player-card {
+        min-height: 71px;
+
+        padding: 10px 9px;
     }
 
-    .team-season-identity > p {
+    .fantasy-player-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .fantasy-player-left {
+        gap: 9px;
+    }
+
+    .fantasy-player-info h3 {
+        font-size: 0.82rem;
+    }
+
+    .fantasy-player-info p {
+        font-size: 0.64rem;
+    }
+
+    .fantasy-player-stats {
+        gap: 10px;
+    }
+
+    .fantasy-player-stats > div {
+        min-width: 62px;
+    }
+
+    .fantasy-player-stats span {
+        font-size: 0.49rem;
+    }
+
+    .fantasy-player-stats strong {
         font-size: 0.76rem;
     }
 
-    .roster-overview-table {
-        min-width: 760px;
+    .weekly-team-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            61px;
+
+        gap: 6px;
+
+        padding: 7px;
     }
 
-    .position-stat-table {
-        min-width: 950px;
+    .weekly-team {
+        gap: 6px;
     }
 
-    .roster-table th,
-    .roster-table td {
-        padding: 9px 8px;
+    .weekly-team img {
+        width: 22px;
+        height: 22px;
     }
 
-    .roster-table th:nth-child(2),
-    .roster-table td:nth-child(2) {
-        min-width: 215px;
+    .weekly-team strong {
+        font-size: 0.73rem;
     }
 
-    .player-icon-slot {
-        width: 31px;
-        height: 31px;
+    .weekly-record {
+        font-size: 0.63rem;
     }
 
-    .roster-player {
-        gap: 8px;
-    }
-
-    .roster-player-name {
-        font-size: 0.8rem;
-    }
-
-    .roster-player-meta {
-        font-size: 0.64rem;
+    .weekly-score {
+        font-size: 0.75rem;
     }
 }
